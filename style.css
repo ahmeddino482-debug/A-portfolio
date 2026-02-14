@@ -4,21 +4,27 @@
   --accent:#00ffff;
   --card: rgba(255,255,255,0.05);
 }
+
+/* Light mode adjustments */
 body.light{
   --text:#111;
   --muted:#333;
   --accent:#0066ff;
   --card: rgba(255,255,255,0.8);
-  background: linear-gradient(135deg, #f0f4ff, #d0e0ff, #a0c0ff);
+  background: radial-gradient(ellipse at bottom, #e0f7ff, #a0dfff, #80c0ff);
 }
 
-*{margin:0;padding:0;box-sizing:border-box;}
+/* Dark / space background */
 body{
   font-family:'Inter',sans-serif;
   color:var(--text);
   line-height:1.6;
   transition:0.3s ease;
-  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  background:
+    radial-gradient(ellipse at center, #0f0c29 0%, #302b63 50%, #24243e 100%),
+    url('https://www.transparenttextures.com/patterns/stardust.png');
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 /* Header */
