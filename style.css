@@ -2,14 +2,19 @@
   Variables
 ----------------------------*/
 :root {
-  --primary:#0f0f0f;
-  --light:#f9f9f9;
-  --accent:#00d4ff;
-  --text:#ffffff;
-  --text-dark:#0f0f0f;
-  --card-bg:rgba(0,0,0,0.7);
+  --primary:#0f0f0f; /* dark mode bg */
+  --light-bg: linear-gradient(135deg,#e0f7ff,#f0e6ff); /* light mode gradient */
+  --text:#ffffff; /* dark mode text */
+  --text-dark:#1a1a1a; /* light mode text */
+  --accent:#00d4ff; /* neon cyan accent */
+  --accent-gradient: linear-gradient(45deg,#00d4ff,#0066ff); /* buttons */
+  --card-bg-dark: rgba(0,0,0,0.7); /* dark mode cards */
+  --card-bg-light: rgba(255,255,255,0.7); /* light mode cards */
 }
 
+/* ---------------------------
+  Body
+----------------------------*/
 body {
   font-family: 'Inter', sans-serif;
   margin:0;
@@ -19,9 +24,8 @@ body {
   transition:0.4s;
 }
 
-/* Dark / Light Mode */
 body.light {
-  background: var(--light);
+  background: var(--light-bg);
   color: var(--text-dark);
 }
 
@@ -37,6 +41,9 @@ header {
   backdrop-filter:blur(8px);
   z-index:1000;
 }
+body.light header {
+  background: rgba(255,255,255,0.6);
+}
 header .container.nav{
   display:flex;
   justify-content:space-between;
@@ -46,7 +53,7 @@ header .container.nav{
 header .links a{
   margin:0 10px;
   text-decoration:none;
-  color:var(--text);
+  color:inherit;
   font-weight:600;
   transition:0.3s;
 }
@@ -81,6 +88,8 @@ header .controls button:hover{
   color:#fff;
   padding:0 20px;
 }
+body.light .hero { color: var(--text-dark); }
+
 .hero h1{
   font-size:3rem;
   margin-bottom:15px;
@@ -91,7 +100,7 @@ header .controls button:hover{
 }
 .hero .btn{
   padding:10px 25px;
-  background:linear-gradient(45deg,#00d4ff,#0066ff);
+  background:var(--accent-gradient);
   border:none;
   border-radius:50px;
   color:#fff;
@@ -105,7 +114,7 @@ header .controls button:hover{
   box-shadow:0 0 15px #00d4ff,0 0 25px #0066ff;
 }
 
-/* Hero Overlays & Parallax Layers */
+/* Hero Parallax Layers */
 .parallax-layer{
   position:absolute;
   width:120%;
@@ -147,6 +156,9 @@ header .controls button:hover{
   pointer-events:none;
   border-radius:15px;
 }
+body.light .about-overlay{
+  background:linear-gradient(120deg, rgba(0,212,255,0.05), rgba(255,0,255,0.05));
+}
 .about-header h2{
   text-align:center;
   margin-bottom:25px;
@@ -169,11 +181,14 @@ header .controls button:hover{
   margin-top:30px;
 }
 .skill-card{
-  background:var(--card-bg);
+  background:var(--card-bg-dark);
   padding:20px;
   border-radius:15px;
   text-align:center;
   transition:0.3s;
+}
+body.light .skill-card{
+  background:var(--card-bg-light);
 }
 .skill-card:hover{
   transform:translateY(-5px);
@@ -206,10 +221,13 @@ header .controls button:hover{
   margin-top:30px;
 }
 .project-grid .card{
-  background:var(--card-bg);
+  background:var(--card-bg-dark);
   padding:20px;
   border-radius:15px;
   transition:0.3s;
+}
+body.light .project-grid .card{
+  background:var(--card-bg-light);
 }
 .project-grid .card:hover{
   transform:translateY(-5px);
@@ -253,7 +271,7 @@ header .controls button:hover{
   font-size:1rem;
 }
 .contact-form .btn{
-  background:linear-gradient(45deg,#00d4ff,#0066ff);
+  background:var(--accent-gradient);
   color:#fff;
   border:none;
   padding:10px 20px;
@@ -317,6 +335,10 @@ footer{
   text-align:center;
   background:rgba(0,0,0,0.5);
   margin-top:50px;
+}
+body.light footer{
+  background:rgba(255,255,255,0.5);
+  color:var(--text-dark);
 }
 
 /* ---------------------------
