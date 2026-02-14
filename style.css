@@ -14,22 +14,19 @@ body.light{
   background: radial-gradient(ellipse at bottom, #e0f7ff, #a0dfff, #80c0ff);
 }
 
-/* Dark / space background */
+/* Body & space background */
 body{
   font-family:'Inter',sans-serif;
   color:var(--text);
   line-height:1.6;
   transition:0.3s ease;
-  background:
-    radial-gradient(ellipse at center, #0f0c29 0%, #302b63 50%, #24243e 100%),
-    url('https://www.transparenttextures.com/patterns/stardust.png');
-  background-size: cover;
-  background-attachment: fixed;
+  background: radial-gradient(ellipse at center, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  overflow-x:hidden;
 }
 
 /* Header */
 .container{width:90%;max-width:1100px;margin:auto;}
-header{padding:20px 0;}
+header{padding:20px 0;position:relative;z-index:100;}
 .nav{display:flex;justify-content:space-between;align-items:center;}
 .links a{margin-left:25px;text-decoration:none;color:var(--text);font-weight:500;transition:0.3s;}
 .links a:hover{color:var(--accent);}
@@ -37,18 +34,37 @@ header{padding:20px 0;}
 button{background:none;border:1px solid var(--muted);color:var(--text);padding:5px 10px;border-radius:6px;cursor:pointer;transition:0.3s;}
 button:hover{box-shadow:0 0 12px var(--accent);}
 .lang-btn.active{background:var(--accent);color:#fff;box-shadow:0 0 12px var(--accent);}
-.lang-btn:hover{background:var(--accent);color:#fff;box-shadow:0 0 12px var(--accent);}
 
 /* Hero */
-.hero{text-align:center;padding:140px 0 80px;}
-.hero h1{font-size:3rem;font-weight:700;color:var(--accent);}
-.subtitle{margin:20px 0;color:var(--muted);max-width:600px;margin-left:auto;margin-right:auto;}
-.btn{display:inline-block;background:transparent;padding:12px 25px;border:2px solid var(--accent);border-radius:12px;color:var(--accent);font-weight:600;text-decoration:none;transition:0.3s;}
+.hero{position:relative;text-align:center;padding:140px 0 100px;overflow:hidden;}
+.hero h1{font-size:3rem;font-weight:700;color:var(--accent);position:relative;z-index:2;}
+.subtitle{margin:20px 0;color:var(--muted);max-width:600px;margin-left:auto;margin-right:auto;position:relative;z-index:2;}
+.btn{display:inline-block;background:transparent;padding:12px 25px;border:2px solid var(--accent);border-radius:12px;color:var(--accent);font-weight:600;text-decoration:none;transition:0.3s;position:relative;z-index:2;}
 .btn:hover{color:#fff;box-shadow:0 0 25px var(--accent);}
 
-/* Sections */
-.section{padding:60px 0;}
-h2{margin-bottom:20px;color:var(--accent);}
+/* About section overlay */
+.about-content{
+  background: rgba(0,0,0,0.5);
+  padding:25px;
+  border-radius:16px;
+  color: var(--text);
+  line-height:1.8;
+  max-width:900px;
+  margin:auto;
+  backdrop-filter: blur(6px);
+}
+.about-content p{margin-bottom:15px;}
+
+/* Parallax layers */
+.parallax-layer{
+  position:absolute;
+  top:0;left:0;width:100%;height:100%;
+  background-repeat:repeat;
+  pointer-events:none;
+}
+.layer1{background-image:url('https://www.transparenttextures.com/patterns/stardust.png');opacity:0.2;z-index:0;}
+.layer2{background-image:url('https://www.transparenttextures.com/patterns/stardust.png');opacity:0.1;z-index:0;transform:scale(1.5);}
+.layer3{background-image:url('https://www.transparenttextures.com/patterns/stardust.png');opacity:0.05;z-index:0;transform:scale(2);}
 
 /* Projects */
 .project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;}
