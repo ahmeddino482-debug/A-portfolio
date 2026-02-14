@@ -76,23 +76,33 @@ btnEn.addEventListener("click", ()=>setLanguage("en"));
 btnAr.addEventListener("click", ()=>setLanguage("ar"));
 setLanguage("en");
 
-// REVEAL ON SCROLL + PARALLAX
+// REVEAL ON SCROLL
 const reveal = ()=>{
   document.querySelectorAll(".reveal").forEach(el=>{
     const top = el.getBoundingClientRect().top;
     if(top < window.innerHeight-150) el.classList.add("active");
-    else el.classList.remove("active");
   });
 }
 window.addEventListener("scroll",reveal);
 window.addEventListener("load",reveal);
 
-// Parallax layers
+// SKILL BAR ANIMATION
+const skillBars = document.querySelectorAll(".skill-level");
+window.addEventListener("scroll",()=>{
+  skillBars.forEach(bar=>{
+    const rect = bar.getBoundingClientRect();
+    if(rect.top < window.innerHeight-50){
+      bar.style.transform = "scaleX(1)";
+    }
+  });
+});
+
+// PARALLAX
 const layers = document.querySelectorAll(".parallax-layer");
 window.addEventListener("scroll",()=>{
   const scroll = window.scrollY;
   layers.forEach((layer,i)=>{
-    const speed = (i+1) * 0.2;
+    const speed = (i+1)*0.15;
     layer.style.transform = `translateY(${scroll*speed}px)`;
   });
 });
