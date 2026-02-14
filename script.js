@@ -5,7 +5,15 @@ themeToggle.addEventListener("click", ()=>{
   document.body.classList.toggle("dark");
   localStorage.setItem("theme", document.body.classList.contains("dark")?"dark":"light");
 });
-if(localStorage.getItem("theme")==="dark") document.body.classList.add("dark");
+
+// Default to dark mode unless user chose light
+if(localStorage.getItem("theme")==="light"){
+  document.body.classList.remove("dark");
+  document.body.classList.add("light");
+}else{
+  document.body.classList.remove("light");
+  document.body.classList.add("dark");
+}
 
 // Language Toggle + About content
 const langEn = document.getElementById("langEn");
