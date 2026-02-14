@@ -6,9 +6,10 @@
 }
 body.light{
   --text:#111;
-  --muted:#555;
-  --accent:#00bfff;
-  --card: rgba(255,255,255,0.3);
+  --muted:#333;
+  --accent:#0066ff;
+  --card: rgba(255,255,255,0.8);
+  background: linear-gradient(135deg, #f0f4ff, #d0e0ff, #a0c0ff);
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -27,7 +28,10 @@ header{padding:20px 0;}
 .links a{margin-left:25px;text-decoration:none;color:var(--text);font-weight:500;transition:0.3s;}
 .links a:hover{color:var(--accent);}
 .controls{display:flex;gap:10px;}
-button,select{background:none;border:1px solid var(--muted);color:var(--text);padding:5px 10px;border-radius:6px;cursor:pointer;}
+button{background:none;border:1px solid var(--muted);color:var(--text);padding:5px 10px;border-radius:6px;cursor:pointer;transition:0.3s;}
+button:hover{box-shadow:0 0 12px var(--accent);}
+.lang-btn.active{background:var(--accent);color:#fff;box-shadow:0 0 12px var(--accent);}
+.lang-btn:hover{background:var(--accent);color:#fff;box-shadow:0 0 12px var(--accent);}
 
 /* Hero */
 .hero{text-align:center;padding:140px 0 80px;}
