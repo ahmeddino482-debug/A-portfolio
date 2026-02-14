@@ -5,7 +5,6 @@
   --card: rgba(255,255,255,0.05);
 }
 
-/* Light mode adjustments */
 body.light{
   --text:#111;
   --muted:#333;
@@ -14,7 +13,6 @@ body.light{
   background: radial-gradient(ellipse at bottom, #e0f7ff, #a0dfff, #80c0ff);
 }
 
-/* Body & space background */
 body{
   font-family:'Inter',sans-serif;
   color:var(--text);
@@ -24,7 +22,6 @@ body{
   overflow-x:hidden;
 }
 
-/* Header */
 .container{width:90%;max-width:1100px;margin:auto;}
 header{padding:20px 0;position:relative;z-index:100;}
 .nav{display:flex;justify-content:space-between;align-items:center;}
@@ -42,7 +39,10 @@ button:hover{box-shadow:0 0 12px var(--accent);}
 .btn{display:inline-block;background:transparent;padding:12px 25px;border:2px solid var(--accent);border-radius:12px;color:var(--accent);font-weight:600;text-decoration:none;transition:0.3s;position:relative;z-index:2;}
 .btn:hover{color:#fff;box-shadow:0 0 25px var(--accent);}
 
-/* About section overlay upgrade */
+/* About header */
+.about-header{text-align:center;margin-bottom:30px;}
+
+/* About content */
 .about-content {
   background: linear-gradient(145deg, rgba(0,0,0,0.6), rgba(10,10,30,0.6));
   padding: 35px 30px;
@@ -50,7 +50,7 @@ button:hover{box-shadow:0 0 12px var(--accent);}
   color: var(--text);
   line-height: 1.8;
   max-width: 900px;
-  margin: 50px auto;
+  margin: auto;
   backdrop-filter: blur(10px);
   box-shadow: 0 0 30px rgba(0,255,255,0.2), 0 10px 40px rgba(0,0,0,0.4);
   position: relative;
@@ -59,20 +59,14 @@ button:hover{box-shadow:0 0 12px var(--accent);}
   text-align: left;
   direction: ltr;
 }
+body[dir="rtl"] .about-content{text-align:right;direction:rtl;}
+body[dir="rtl"] .about-header h2{text-align:center;}
 
-/* Arabic override */
-body[dir="rtl"] .about-content{
-  text-align: right;
-  direction: rtl;
-}
-
-/* Glow & sparkles */
 .about-content strong,
 .about-content h3 {
   color: var(--accent);
   text-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent);
 }
-
 .about-content::before {
   content: "";
   position: absolute;
@@ -86,32 +80,12 @@ body[dir="rtl"] .about-content{
   animation: sparkle 20s linear infinite;
   pointer-events: none;
 }
-
-@keyframes sparkle {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.about-content p {
-  margin-bottom: 18px;
-  font-size: 1.05rem;
-}
-
-.about-content p strong {
-  display: inline-block;
-  background: rgba(0,255,255,0.2);
-  padding: 5px 12px;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0,255,255,0.3);
-}
+@keyframes sparkle {0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+.about-content p{margin-bottom:18px;font-size:1.05rem;}
+.about-content p strong{display:inline-block;background:rgba(0,255,255,0.2);padding:5px 12px;border-radius:8px;box-shadow:0 0 15px rgba(0,255,255,0.3);}
 
 /* Parallax layers */
-.parallax-layer{
-  position:absolute;
-  top:0;left:0;width:100%;height:100%;
-  background-repeat:repeat;
-  pointer-events:none;
-}
+.parallax-layer{position:absolute;top:0;left:0;width:100%;height:100%;background-repeat:repeat;pointer-events:none;}
 .layer1{background-image:url('https://www.transparenttextures.com/patterns/stardust.png');opacity:0.2;z-index:0;}
 .layer2{background-image:url('https://www.transparenttextures.com/patterns/stardust.png');opacity:0.1;z-index:0;transform:scale(1.5);}
 .layer3{background-image:url('https://www.transparenttextures.com/patterns/stardust.png');opacity:0.05;z-index:0;transform:scale(2);}
