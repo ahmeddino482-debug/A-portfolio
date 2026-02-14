@@ -6,6 +6,8 @@
 <title>Ahmed Rashdan | Space-Tech Data Scientist</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<!-- Font Awesome CDN for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -14,6 +16,7 @@
     <div class="logo">Ahmed Rashdan</div>
     <nav class="links">
       <a href="#about" data-i18n="navAbout">About</a>
+      <a href="#skills" data-i18n="navSkills">Skills</a>
       <a href="#projects" data-i18n="navProjects">Projects</a>
       <a href="#contact" data-i18n="navContact">Contact</a>
     </nav>
@@ -51,6 +54,38 @@
 
   <div class="about-content" id="aboutText">
     <!-- injected dynamically by JS -->
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="container section reveal">
+  <h2 data-i18n="skillsTitle">My Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <i class="fas fa-robot"></i>
+      <h3 data-i18n="skillAI">AI & Machine Learning</h3>
+      <div class="skill-bar"><div class="skill-level" style="width:90%"></div></div>
+    </div>
+    <div class="skill-card">
+      <i class="fas fa-cogs"></i>
+      <h3 data-i18n="skillAutomation">Automation</h3>
+      <div class="skill-bar"><div class="skill-level" style="width:85%"></div></div>
+    </div>
+    <div class="skill-card">
+      <i class="fas fa-code"></i>
+      <h3 data-i18n="skillWeb">Web Development</h3>
+      <div class="skill-bar"><div class="skill-level" style="width:80%"></div></div>
+    </div>
+    <div class="skill-card">
+      <i class="fas fa-space-shuttle"></i>
+      <h3 data-i18n="skillSpace">Space Tech / Satellite Data</h3>
+      <div class="skill-bar"><div class="skill-level" style="width:75%"></div></div>
+    </div>
+    <div class="skill-card">
+      <i class="fas fa-robot-arm"></i>
+      <h3 data-i18n="skillRobotics">Robotics</h3>
+      <div class="skill-bar"><div class="skill-level" style="width:70%"></div></div>
+    </div>
   </div>
 </section>
 
@@ -95,23 +130,25 @@
     <button class="btn">Send Message</button>
   </form>
 
-  <div class="contact-links">
-    <p>Email: <a href="mailto:ahmeddino482@gmail.com">ahmeddino482@gmail.com</a></p>
-    <p>Phone: <a href="tel:01283359534">01283359534</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/ahmed-rashdan1" target="_blank">linkedin.com/in/ahmed-rashdan1</a></p>
-    <p>GitHub: <a href="https://github.com/ahmedrashdan" target="_blank">github.com/ahmedrashdan</a></p>
+  <div class="contact-icons">
+    <a href="mailto:ahmeddino482@gmail.com" target="_blank" title="Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="tel:01283359534" title="Phone">
+      <i class="fas fa-phone"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/ahmed-rashdan1" target="_blank" title="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/ahmedrashdan" target="_blank" title="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
   </div>
 </section>
 
 <footer>
   <div class="container footer">
     <p>© 2026 Ahmed Rashdan</p>
-    <p>
-      <a href="mailto:ahmeddino482@gmail.com">Email</a> |
-      <a href="tel:01283359534">Phone</a> |
-      <a href="https://www.linkedin.com/in/ahmed-rashdan1" target="_blank">LinkedIn</a> |
-      <a href="https://github.com/ahmedrashdan" target="_blank">GitHub</a>
-    </p>
   </div>
 </footer>
 
