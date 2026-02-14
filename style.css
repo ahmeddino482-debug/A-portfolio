@@ -50,22 +50,29 @@ button:hover{box-shadow:0 0 12px var(--accent);}
   color: var(--text);
   line-height: 1.8;
   max-width: 900px;
-  margin: auto;
+  margin: 50px auto;
   backdrop-filter: blur(10px);
   box-shadow: 0 0 30px rgba(0,255,255,0.2), 0 10px 40px rgba(0,0,0,0.4);
   position: relative;
   overflow: hidden;
   transition: 0.3s ease;
+  text-align: left;
+  direction: ltr;
 }
 
-/* Glow effect on headings inside about */
+/* Arabic override */
+body[dir="rtl"] .about-content{
+  text-align: right;
+  direction: rtl;
+}
+
+/* Glow & sparkles */
 .about-content strong,
 .about-content h3 {
   color: var(--accent);
   text-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent);
 }
 
-/* Add subtle animated sparkles inside the about card */
 .about-content::before {
   content: "";
   position: absolute;
@@ -85,13 +92,11 @@ button:hover{box-shadow:0 0 12px var(--accent);}
   100% { transform: rotate(360deg); }
 }
 
-/* Paragraph spacing */
 .about-content p {
   margin-bottom: 18px;
   font-size: 1.05rem;
 }
 
-/* Highlight "Why work with me?" block */
 .about-content p strong {
   display: inline-block;
   background: rgba(0,255,255,0.2);
@@ -115,20 +120,4 @@ button:hover{box-shadow:0 0 12px var(--accent);}
 .project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;}
 .card{background:var(--card);backdrop-filter:blur(14px);padding:25px;border-radius:16px;transition:0.3s;box-shadow:0 0 15px rgba(0,0,0,0.5);}
 .card:hover{transform:translateY(-10px) scale(1.03);box-shadow:0 0 35px var(--accent);}
-.card-links a{margin-right:15px;text-decoration:none;color:var(--accent);}
-
-/* Contact */
-.contact-form{display:flex;flex-direction:column;gap:15px;}
-.contact-form input,.contact-form textarea{padding:10px;border-radius:6px;border:1px solid var(--muted);background:var(--card);color:var(--text);}
-.contact-links a,footer a{color:var(--accent);text-decoration:none;transition:0.3s;}
-.contact-links a:hover,footer a:hover{text-decoration:underline;}
-
-/* Footer */
-footer{padding:40px 0;text-align:center;color:var(--muted);}
-
-/* Reveal animation */
-.reveal{opacity:0;transform:translateY(40px);transition:0.6s ease;}
-.reveal.active{opacity:1;transform:translateY(0);}
-
-/* Responsive */
-@media(max-width:768px){.links{display:none;}}
+.c
