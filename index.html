@@ -4,155 +4,125 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ahmed Rashdan | Space-Tech Data Scientist</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- 🌌 Background -->
-<div class="stars"></div>
-
-<div class="orbit-container">
-    <div class="planet"></div>
-    <div class="orbit">
-        <div class="satellite"></div>
-    </div>
-</div>
-
 <header>
-<nav class="container">
-    <h1 class="logo">Ahmed Rashdan</h1>
-
-    <button class="hamburger" id="hamburger">☰</button>
-
-    <ul class="nav-links">
-        <li><a href="#home" data-i18n="navHome">Home</a></li>
-        <li><a href="#about" data-i18n="navAbout">About</a></li>
-        <li><a href="#projects" data-i18n="navProjects">Projects</a></li>
-        <li><a href="#contact" data-i18n="navContact">Contact</a></li>
-    </ul>
-
+  <div class="container nav">
+    <div class="logo">Ahmed Rashdan</div>
+    <nav class="links">
+      <a href="#about" data-i18n="navAbout">About</a>
+      <a href="#projects" data-i18n="navProjects">Projects</a>
+      <a href="#contact" data-i18n="navContact">Contact</a>
+    </nav>
     <div class="controls">
-        <button id="themeToggle">🌙</button>
-        <select id="languageSwitcher">
-            <option value="en">EN</option>
-            <option value="ar">AR</option>
-        </select>
+      <button id="themeToggle">🌙</button>
+      <select id="languageSwitcher">
+        <option value="en">EN</option>
+        <option value="ar">AR</option>
+      </select>
     </div>
-</nav>
+  </div>
 </header>
 
 <main>
 
-<section id="home" class="hero section glass">
-    <div class="container">
-        <h2 data-i18n="heroTitle">Hi, I'm Ahmed Rashdan</h2>
-        <p data-i18n="heroSubtitle">
-            Space-Tech Data Scientist | AI Engineer | Automation Specialist
-        </p>
-        <a href="#projects" class="btn" data-i18n="heroBtn">View Projects</a>
+<!-- Hero -->
+<section class="hero container reveal">
+  <h1 data-i18n="heroTitle">Space-Tech Data Scientist</h1>
+  <p class="subtitle" data-i18n="heroSubtitle">
+    I build intelligent systems at the intersection of AI, automation, and orbital mechanics.
+  </p>
+  <a href="#projects" class="btn" data-i18n="heroBtn">View Work</a>
+</section>
+
+<!-- About -->
+<section id="about" class="container section reveal">
+  <h2 data-i18n="aboutTitle">About Me</h2>
+  <p data-i18n="aboutText">
+    Hello, I am Ahmed Rashdan, a professional Data Scientist from Egypt, specializing in data analysis and AI for space technology and satellites.
+
+    I started my journey in technology at a young age, inspired by my love for video games and curiosity about how digital systems work, which led me to start programming early and build a strong foundation in data science and AI. Over time, I focused on integrating data science with space technology and analyzing orbital systems and remote sensing data.
+
+    I have worked on projects in data analysis, visualization, and developing intelligent models related to satellite and space environment data, with a proven ability to transform complex space data into actionable solutions supporting research and technical development.
+
+    Why work with me?
+
+    My unique value lies in combining advanced data science skills with a deep understanding of space technology, enabling me to efficiently handle specialized space projects beyond traditional ones. I have experience in satellite data analysis, navigation systems (GPS), and space weather, delivering accurate and reliable solutions in high-complexity technical environments.
+
+    I focus on your goals, transforming data into actionable insights that drive innovation and decision-making. I excel at adapting to modern tools, working professionally under pressure, and meeting high-quality standards and deadlines.
+
+    My goal is to build long-term partnerships based on trust, technical excellence, and continuous development.
+
+    If you are looking for a data scientist with real expertise in space technologies, capable of turning space data into tangible value, I am ready to collaborate.
+  </p>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="container section reveal">
+  <h2 data-i18n="projectsTitle">Selected Projects</h2>
+  <div class="project-grid">
+    <div class="card">
+      <h3>Orbital Mechanics Simulator</h3>
+      <p>Lambert & Gibbs orbital trajectory computation system.</p>
+      <div class="card-links">
+        <a href="#">Live</a>
+        <a href="#">GitHub</a>
+      </div>
     </div>
-</section>
-
-<!-- 📊 Stats -->
-<section class="section glass stats">
-    <div class="stat">
-        <h3 class="counter" data-target="15">0</h3>
-        <p>Projects Completed</p>
+    <div class="card">
+      <h3>AI Automation Engine</h3>
+      <p>Predictive workflow optimization using AI models.</p>
+      <div class="card-links">
+        <a href="#">Live</a>
+        <a href="#">GitHub</a>
+      </div>
     </div>
-    <div class="stat">
-        <h3 class="counter" data-target="5">0</h3>
-        <p>Space Systems Built</p>
+    <div class="card">
+      <h3>Sports Data Analytics</h3>
+      <p>Football performance dashboard using Python & SQL.</p>
+      <div class="card-links">
+        <a href="#">Live</a>
+        <a href="#">GitHub</a>
+      </div>
     </div>
-    <div class="stat">
-        <h3 class="counter" data-target="3">0</h3>
-        <p>AI Automation Systems</p>
-    </div>
+  </div>
 </section>
 
-<section id="about" class="section glass">
-<div class="container about-grid">
-<img src="https://via.placeholder.com/300" class="profile-img">
+<!-- Contact -->
+<section id="contact" class="container section reveal">
+  <h2 data-i18n="contactTitle">Contact</h2>
+  <form class="contact-form">
+    <input type="text" placeholder="Name" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="Message" rows="4"></textarea>
+    <button class="btn">Send Message</button>
+  </form>
 
-<div>
-<h2 data-i18n="aboutTitle">About Me</h2>
-<p data-i18n="aboutText">
-I specialize in AI-powered space systems, orbital mechanics,
-and intelligent automation solutions.
-</p>
-</div>
-</div>
+  <div class="contact-links">
+    <p>Email: <a href="mailto:ahmeddino482@gmail.com">ahmeddino482@gmail.com</a></p>
+    <p>Phone: <a href="tel:01283359534">01283359534</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/ahmed-rashdan1" target="_blank">linkedin.com/in/ahmed-rashdan1</a></p>
+    <p>GitHub: <a href="https://github.com/ahmedrashdan" target="_blank">github.com/ahmedrashdan</a></p>
+  </div>
 </section>
-
-<section id="projects" class="section glass">
-<div class="container">
-<h2>Projects</h2>
-
-<div class="filters">
-<button class="filter-btn active" data-filter="all">All</button>
-<button class="filter-btn" data-filter="space">Space</button>
-<button class="filter-btn" data-filter="ai">AI</button>
-<button class="filter-btn" data-filter="sports">Sports</button>
-</div>
-
-<div class="projects-grid">
-
-<div class="project-card" data-category="space">
-<img src="https://via.placeholder.com/400x250">
-<h3>Orbital Simulator</h3>
-<p>Lambert & Gibbs orbital mechanics implementation.</p>
-</div>
-
-<div class="project-card" data-category="ai">
-<img src="https://via.placeholder.com/400x250">
-<h3>AI Automation Engine</h3>
-<p>AI-based workflow optimization system.</p>
-</div>
-
-<div class="project-card" data-category="sports">
-<img src="https://via.placeholder.com/400x250">
-<h3>Football Analytics Dashboard</h3>
-<p>Performance tracking using Python & SQL.</p>
-</div>
-
-</div>
-</div>
-</section>
-
-<section id="contact" class="section glass">
-<div class="container">
-<h2 data-i18n="contactTitle">Contact Me</h2>
-
-<form class="contact-form">
-<input type="text" placeholder="Name" required>
-<input type="email" placeholder="Email" required>
-<input type="text" placeholder="Subject">
-<textarea placeholder="Message" rows="5"></textarea>
-<button type="submit" class="btn">Send</button>
-</form>
-</div>
-</section>
-
-</main>
 
 <footer>
-<div class="container">
-<p>© 2026 Ahmed Rashdan. All Rights Reserved.</p>
-</div>
+  <div class="container footer">
+    <p>© 2026 Ahmed Rashdan</p>
+    <p>
+      <a href="mailto:ahmeddino482@gmail.com">Email</a> |
+      <a href="tel:01283359534">Phone</a> |
+      <a href="https://www.linkedin.com/in/ahmed-rashdan1" target="_blank">LinkedIn</a> |
+      <a href="https://github.com/ahmedrashdan" target="_blank">GitHub</a>
+    </p>
+  </div>
 </footer>
-
-<!-- 🤖 AI Assistant -->
-<div class="ai-widget" id="aiWidget">
-<div class="ai-header">
-AI Assistant
-<span id="closeAI">✖</span>
-</div>
-<div class="ai-body">
-<p>Hello 👋 I'm Ahmed's AI assistant.</p>
-<p>Interested in Space Tech or AI?</p>
-</div>
-</div>
-
-<button class="ai-button" id="aiButton">🤖</button>
 
 <script src="script.js"></script>
 </body>
