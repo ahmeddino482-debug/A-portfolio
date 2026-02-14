@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahmed Rashdan | Space-Tech Data Scientist</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 🌌 Background -->
+<div class="stars"></div>
+
+<div class="orbit-container">
+    <div class="planet"></div>
+    <div class="orbit">
+        <div class="satellite"></div>
+    </div>
+</div>
+
+<header>
+<nav class="container">
+    <h1 class="logo">Ahmed Rashdan</h1>
+
+    <button class="hamburger" id="hamburger">☰</button>
+
+    <ul class="nav-links">
+        <li><a href="#home" data-i18n="navHome">Home</a></li>
+        <li><a href="#about" data-i18n="navAbout">About</a></li>
+        <li><a href="#projects" data-i18n="navProjects">Projects</a></li>
+        <li><a href="#contact" data-i18n="navContact">Contact</a></li>
+    </ul>
+
+    <div class="controls">
+        <button id="themeToggle">🌙</button>
+        <select id="languageSwitcher">
+            <option value="en">EN</option>
+            <option value="ar">AR</option>
+        </select>
+    </div>
+</nav>
+</header>
+
+<main>
+
+<section id="home" class="hero section glass">
+    <div class="container">
+        <h2 data-i18n="heroTitle">Hi, I'm Ahmed Rashdan</h2>
+        <p data-i18n="heroSubtitle">
+            Space-Tech Data Scientist | AI Engineer | Automation Specialist
+        </p>
+        <a href="#projects" class="btn" data-i18n="heroBtn">View Projects</a>
+    </div>
+</section>
+
+<!-- 📊 Stats -->
+<section class="section glass stats">
+    <div class="stat">
+        <h3 class="counter" data-target="15">0</h3>
+        <p>Projects Completed</p>
+    </div>
+    <div class="stat">
+        <h3 class="counter" data-target="5">0</h3>
+        <p>Space Systems Built</p>
+    </div>
+    <div class="stat">
+        <h3 class="counter" data-target="3">0</h3>
+        <p>AI Automation Systems</p>
+    </div>
+</section>
+
+<section id="about" class="section glass">
+<div class="container about-grid">
+<img src="https://via.placeholder.com/300" class="profile-img">
+
+<div>
+<h2 data-i18n="aboutTitle">About Me</h2>
+<p data-i18n="aboutText">
+I specialize in AI-powered space systems, orbital mechanics,
+and intelligent automation solutions.
+</p>
+</div>
+</div>
+</section>
+
+<section id="projects" class="section glass">
+<div class="container">
+<h2>Projects</h2>
+
+<div class="filters">
+<button class="filter-btn active" data-filter="all">All</button>
+<button class="filter-btn" data-filter="space">Space</button>
+<button class="filter-btn" data-filter="ai">AI</button>
+<button class="filter-btn" data-filter="sports">Sports</button>
+</div>
+
+<div class="projects-grid">
+
+<div class="project-card" data-category="space">
+<img src="https://via.placeholder.com/400x250">
+<h3>Orbital Simulator</h3>
+<p>Lambert & Gibbs orbital mechanics implementation.</p>
+</div>
+
+<div class="project-card" data-category="ai">
+<img src="https://via.placeholder.com/400x250">
+<h3>AI Automation Engine</h3>
+<p>AI-based workflow optimization system.</p>
+</div>
+
+<div class="project-card" data-category="sports">
+<img src="https://via.placeholder.com/400x250">
+<h3>Football Analytics Dashboard</h3>
+<p>Performance tracking using Python & SQL.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="contact" class="section glass">
+<div class="container">
+<h2 data-i18n="contactTitle">Contact Me</h2>
+
+<form class="contact-form">
+<input type="text" placeholder="Name" required>
+<input type="email" placeholder="Email" required>
+<input type="text" placeholder="Subject">
+<textarea placeholder="Message" rows="5"></textarea>
+<button type="submit" class="btn">Send</button>
+</form>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="container">
+<p>© 2026 Ahmed Rashdan. All Rights Reserved.</p>
+</div>
+</footer>
+
+<!-- 🤖 AI Assistant -->
+<div class="ai-widget" id="aiWidget">
+<div class="ai-header">
+AI Assistant
+<span id="closeAI">✖</span>
+</div>
+<div class="ai-body">
+<p>Hello 👋 I'm Ahmed's AI assistant.</p>
+<p>Interested in Space Tech or AI?</p>
+</div>
+</div>
+
+<button class="ai-button" id="aiButton">🤖</button>
+
+<script src="script.js"></script>
+</body>
+</html>
