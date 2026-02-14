@@ -1,108 +1,91 @@
-// DARK/LIGHT MODE
+// -----------------------
+// Dark / Light Mode Toggle
+// -----------------------
 const themeToggle = document.getElementById("themeToggle");
-themeToggle.addEventListener("click", ()=>{
-  document.body.classList.toggle("light");
-  localStorage.setItem("theme", document.body.classList.contains("light")?"light":"dark");
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
 });
-if(localStorage.getItem("theme")==="light") document.body.classList.add("light");
 
-// LANGUAGE TOGGLE
-const btnEn = document.getElementById("langEn");
-const btnAr = document.getElementById("langAr");
-const aboutContent = document.getElementById("aboutText");
+// Apply stored theme on load
+if(localStorage.getItem("theme") === "dark"){
+  document.body.classList.add("dark");
+}
 
-const translations = {
-  en:{
-    navAbout:"About",
-    navSkills:"Skills",
-    navProjects:"Projects",
-    navContact:"Contact",
-    heroTitle:"Space-Tech Data Scientist",
-    heroSubtitle:"I build intelligent systems at the intersection of AI, automation, and orbital mechanics.",
-    heroBtn:"View Work",
-    aboutTitle:"About Me",
-    aboutText:`<p>Hello, I’m Ahmed Rashdan, a professional Data Scientist from Egypt, specializing in AI, data analysis, and space/satellite technology.</p>
-    <p>I began my journey early through curiosity about video games and digital systems, building a strong foundation in programming and data science.</p>
-    <p>I have worked on satellite data projects, remote sensing, and AI solutions, turning complex space data into practical insights.</p>
+// -----------------------
+// Language Toggle EN/AR
+// -----------------------
+const langEn = document.getElementById("langEn");
+const langAr = document.getElementById("langAr");
+const aboutText = document.getElementById("aboutText");
+
+// About Section Content
+const aboutContent = {
+  en: `
+    <p>Hello, I'm Ahmed Rashdan, a professional data scientist from Egypt, specialized in data analysis and AI in the field of space technologies and satellites.</p>
+    <p>My journey in technology began at an early age with a love for video games and curiosity about how digital systems work, which pushed me to learn programming early and build a strong foundation in data science and AI. As my career evolved, I focused on integrating data science with space technology, analyzing orbital systems and remote sensing data.</p>
+    <p>I have worked on projects involving data analysis, visualization, and AI models related to satellite data and space environments, with a special ability to handle complex space datasets and convert them into actionable solutions supporting scientific research and technical development.</p>
     <p><strong>Why work with me?</strong></p>
-    <p>I combine advanced data science skills with deep space tech knowledge. Experienced in satellite data, GPS, and space weather analysis, delivering accurate and reliable solutions.</p>
-    <p>I focus on your goals, transforming data into actionable insights to drive innovation.</p>`,
-    skillsTitle:"My Skills",
-    skillAI:"AI & Machine Learning",
-    skillAutomation:"Automation",
-    skillWeb:"Web Development",
-    skillSpace:"Space Tech / Satellite Data",
-    skillRobotics:"Robotics",
-    projectsTitle:"Selected Projects",
-    contactTitle:"Contact"
-  },
-  ar:{
-    navAbout:"حول",
-    navSkills:"مهارات",
-    navProjects:"مشاريع",
-    navContact:"تواصل",
-    heroTitle:"عالم بيانات تقنيات الفضاء",
-    heroSubtitle:"أقوم ببناء أنظمة ذكية تجمع بين الذكاء الاصطناعي والأتمتة وميكانيكا المدارات.",
-    heroBtn:"شاهد الأعمال",
-    aboutTitle:"حول",
-    aboutText:`<p>مرحبًا، أنا أحمد رشدان، عالم بيانات محترف من مصر، متخصص في تحليل البيانات والذكاء الاصطناعي في مجال تقنيات الفضاء والأقمار الصناعية.</p>
-<p>بدأت رحلتي في مجال التكنولوجيا في سن مبكرة من خلال حبي لألعاب الفيديو وفضولي لفهم كيفية عمل الأنظمة الرقمية، مما دفعني لتعلّم البرمجة مبكرًا وبناء أساس قوي في علوم البيانات والذكاء الاصطناعي.</p>
-<p>عملت على مشاريع في تحليل بيانات الأقمار الصناعية، الاستشعار عن بُعد، وتطوير نماذج ذكية، حيث أحوّل البيانات الفضائية المعقدة إلى حلول عملية.</p>
-<p><strong>لماذا تختار العمل معي؟</strong></p>
-<p>أجمع بين المهارات المتقدمة في علوم البيانات والفهم العميق لتقنيات الفضاء. أمتلك خبرة في تحليل بيانات الأقمار الصناعية، أنظمة الملاحة، والطقس الفضائي، لتقديم حلول دقيقة وموثوقة.</p>
-<p>أركز على أهدافك، وأحوّل البيانات إلى رؤى قابلة للتنفيذ لدعم الابتكار.</p>`,
-    skillsTitle:"مهاراتي",
-    skillAI:"الذكاء الاصطناعي والتعلم الآلي",
-    skillAutomation:"الأتمتة",
-    skillWeb:"تطوير الويب",
-    skillSpace:"تقنيات الفضاء / بيانات الأقمار الصناعية",
-    skillRobotics:"الروبوتات",
-    projectsTitle:"المشاريع",
-    contactTitle:"تواصل"
-  }
+    <p>What sets me apart is the combination of advanced data science skills with a deep understanding of space technologies, allowing me to efficiently handle specialized space projects, not just traditional ones. I have experience analyzing satellite data, GPS systems, and space weather, enabling me to deliver accurate and reliable solutions in high-tech environments.</p>
+    <p>I focus on your goals, turning data into actionable insights to support innovation and decision-making. I adapt quickly to modern tools, work professionally under pressure, and commit to quality and deadlines.</p>
+    <p>My goal is to build long-term partnerships based on trust, technical excellence, and continuous development.</p>
+    <p>If you are looking for a data scientist with real experience in space technologies who turns space data into tangible value, I am ready to work with you.</p>
+  `,
+  ar: `
+    <p>مرحبًا، أنا أحمد رشدان، عالم بيانات محترف من مصر، متخصص في تحليل البيانات والذكاء الاصطناعي في مجال تقنيات الفضاء والأقمار الصناعية.</p>
+    <p>بدأت رحلتي في مجال التكنولوجيا في سن مبكرة من خلال حبي لألعاب الفيديو وفضولي لفهم كيفية عمل الأنظمة الرقمية، مما دفعني لتعلّم البرمجة مبكرًا وبناء أساس قوي في علوم البيانات والذكاء الاصطناعي. ومع تطور مسيرتي، ركّزت على دمج علوم البيانات مع تكنولوجيا الفضاء وتحليل بيانات الأنظمة المدارية والاستشعار عن بُعد.</p>
+    <p>عملت على مشاريع في تحليل البيانات، تصورها، وتطوير نماذج ذكية مرتبطة ببيانات الأقمار الصناعية والبيئة الفضائية، حيث أمتلك قدرة مميزة على التعامل مع البيانات الفضائية المعقدة وتحويلها إلى حلول عملية تدعم البحث العلمي والتطوير التقني.</p>
+    <p><strong>لماذا تختار العمل معي؟</strong></p>
+    <p>ما يميزني هو الجمع بين المهارات المتقدمة في علوم البيانات والفهم العميق لتقنيات الفضاء، مما يمكّنني من العمل بكفاءة على المشاريع الفضائية المتخصصة، وليس فقط المشاريع التقليدية. أمتلك خبرة في تحليل بيانات الأقمار الصناعية، أنظمة الملاحة (GPS)، والطقس الفضائي، مما يجعلني قادرًا على تقديم حلول دقيقة وموثوقة في بيئات تقنية عالية التعقيد.</p>
+    <p>أركز على أهدافك، وأحوّل البيانات إلى رؤى قابلة للتنفيذ تدعم الابتكار واتخاذ القرار. كما أتميز بسرعة التكيّف مع الأدوات الحديثة، والعمل باحترافية تحت الضغط، والالتزام بالجودة والمواعيد.</p>
+    <p>هدفي هو بناء شراكات طويلة الأمد قائمة على الثقة، والتميّز التقني، والتطوير المستمر.</p>
+    <p>إذا كنت تبحث عن عالم بيانات يمتلك خبرة حقيقية في تقنيات الفضاء، ويحوّل البيانات الفضائية إلى قيمة ملموسة، فأنا مستعد للعمل.</p>
+  `
 };
 
+// Set language function
 function setLanguage(lang){
-  aboutContent.innerHTML = translations[lang].aboutText;
-  document.querySelectorAll("[data-i18n]").forEach(el=>{
-    const key = el.getAttribute("data-i18n");
-    if(translations[lang][key]) el.innerHTML = translations[lang][key];
-  });
-  document.body.dir = lang==="ar"?"rtl":"ltr";
-  btnEn.classList.toggle("active", lang==="en");
-  btnAr.classList.toggle("active", lang==="ar");
+  if(lang === 'en'){
+    document.documentElement.setAttribute('dir','ltr');
+    aboutText.innerHTML = aboutContent.en;
+    langEn.classList.add('active');
+    langAr.classList.remove('active');
+  } else {
+    document.documentElement.setAttribute('dir','rtl');
+    aboutText.innerHTML = aboutContent.ar;
+    langAr.classList.add('active');
+    langEn.classList.remove('active');
+  }
 }
-btnEn.addEventListener("click", ()=>setLanguage("en"));
-btnAr.addEventListener("click", ()=>setLanguage("ar"));
-setLanguage("en");
 
-// REVEAL ON SCROLL
-const reveal = ()=>{
-  document.querySelectorAll(".reveal").forEach(el=>{
+// Event listeners
+langEn.addEventListener('click', () => setLanguage('en'));
+langAr.addEventListener('click', () => setLanguage('ar'));
+
+// Initialize
+setLanguage('en');
+
+// -----------------------
+// Scroll Reveal Animation
+// -----------------------
+const reveals = document.querySelectorAll(".reveal");
+window.addEventListener("scroll", function(){
+  reveals.forEach(el=>{
     const top = el.getBoundingClientRect().top;
-    if(top < window.innerHeight-150) el.classList.add("active");
-  });
-}
-window.addEventListener("scroll",reveal);
-window.addEventListener("load",reveal);
-
-// SKILL BAR ANIMATION
-const skillBars = document.querySelectorAll(".skill-level");
-window.addEventListener("scroll",()=>{
-  skillBars.forEach(bar=>{
-    const rect = bar.getBoundingClientRect();
-    if(rect.top < window.innerHeight-50){
-      bar.style.transform = "scaleX(1)";
-    }
+    const windowH = window.innerHeight;
+    if(top < windowH - 50) el.classList.add("active");
   });
 });
 
-// PARALLAX
-const layers = document.querySelectorAll(".parallax-layer");
-window.addEventListener("scroll",()=>{
-  const scroll = window.scrollY;
-  layers.forEach((layer,i)=>{
-    const speed = (i+1)*0.15;
-    layer.style.transform = `translateY(${scroll*speed}px)`;
+// -----------------------
+// Optional: Parallax Hero Layers
+// -----------------------
+window.addEventListener("mousemove", e => {
+  const layers = document.querySelectorAll(".parallax-layer");
+  layers.forEach((layer, index) => {
+    const speed = (index + 1) * 0.02;
+    const x = (window.innerWidth - e.pageX*speed)/100;
+    const y = (window.innerHeight - e.pageY*speed)/100;
+    layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
   });
 });
