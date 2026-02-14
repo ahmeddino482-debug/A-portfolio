@@ -49,12 +49,12 @@ const translations = {
 };
 
 function setLanguage(lang){
-  document.documentElement.lang=lang;
-  document.documentElement.dir=(lang==="ar")?"rtl":"ltr";
+  document.documentElement.lang = lang;
+  document.documentElement.dir = (lang==="ar")?"rtl":"ltr";
 
   document.querySelectorAll("[data-i18n]").forEach(el=>{
     const key = el.getAttribute("data-i18n");
-    el.innerHTML = translations[lang][key];
+    if(translations[lang][key]) el.innerHTML = translations[lang][key];
   });
 
   aboutContent.innerHTML = translations[lang].aboutText;
@@ -65,11 +65,9 @@ function setLanguage(lang){
   localStorage.setItem("lang", lang);
 }
 
-// Load saved language
 let savedLang = localStorage.getItem("lang") || "en";
 setLanguage(savedLang);
 
-// Language buttons
 btnEn.addEventListener("click", ()=> setLanguage("en"));
 btnAr.addEventListener("click", ()=> setLanguage("ar"));
 
