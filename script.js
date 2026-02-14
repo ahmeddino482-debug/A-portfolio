@@ -4,12 +4,15 @@
 const themeToggle = document.getElementById("themeToggle");
 themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
+  document.body.classList.toggle("light"); // toggle light class
   localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
 });
 
 // Apply stored theme on load
 if(localStorage.getItem("theme") === "dark"){
   document.body.classList.add("dark");
+} else {
+  document.body.classList.add("light");
 }
 
 // -----------------------
@@ -78,7 +81,7 @@ window.addEventListener("scroll", function(){
 });
 
 // -----------------------
-// Optional: Parallax Hero Layers
+// Hero Parallax Layers
 // -----------------------
 window.addEventListener("mousemove", e => {
   const layers = document.querySelectorAll(".parallax-layer");
