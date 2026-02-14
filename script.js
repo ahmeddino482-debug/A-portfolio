@@ -70,14 +70,8 @@ function setLanguage(lang){
     el.innerHTML = translations[lang][key];
   });
 
-  // Update active button
-  if(lang==="en"){
-    btnEn.classList.add("active");
-    btnAr.classList.remove("active");
-  } else {
-    btnAr.classList.add("active");
-    btnEn.classList.remove("active");
-  }
+  if(lang==="en"){ btnEn.classList.add("active"); btnAr.classList.remove("active"); } 
+  else { btnAr.classList.add("active"); btnEn.classList.remove("active"); }
 
   localStorage.setItem("lang", lang);
 }
@@ -100,3 +94,13 @@ function reveal(){
 }
 window.addEventListener("scroll",reveal);
 window.addEventListener("load",reveal);
+
+// PARALLAX MOVEMENT
+const layers = document.querySelectorAll(".parallax-layer");
+window.addEventListener("scroll",()=>{
+  const scroll = window.scrollY;
+  layers.forEach((layer,i)=>{
+    const speed = (i+1) * 0.2;
+    layer.style.transform = `translateY(${scroll*speed}px)`;
+  });
+});
