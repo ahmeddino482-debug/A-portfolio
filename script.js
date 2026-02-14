@@ -1,21 +1,21 @@
-// Dark/Light Mode Toggle
+// THEME TOGGLE
 const themeToggle = document.getElementById("themeToggle");
-themeToggle.addEventListener("click", ()=>{
+themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("light");
   document.body.classList.toggle("dark");
-  localStorage.setItem("theme", document.body.classList.contains("dark")?"dark":"light");
+  localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
 });
 
-// Default to dark mode unless user chose light
+// APPLY SAVED THEME
 if(localStorage.getItem("theme")==="light"){
-  document.body.classList.remove("dark");
   document.body.classList.add("light");
-}else{
-  document.body.classList.remove("light");
+  document.body.classList.remove("dark");
+} else {
   document.body.classList.add("dark");
+  document.body.classList.remove("light");
 }
 
-// Language Toggle + About content
+// LANGUAGE SWITCH
 const langEn = document.getElementById("langEn");
 const langAr = document.getElementById("langAr");
 const aboutText = document.getElementById("aboutText");
@@ -37,23 +37,23 @@ function setLanguage(lang){
   langEn.classList.toggle("active", lang==="en");
   langAr.classList.toggle("active", lang==="ar");
 }
-langEn.onclick=()=>setLanguage("en");
-langAr.onclick=()=>setLanguage("ar");
+langEn.onclick = () => setLanguage("en");
+langAr.onclick = () => setLanguage("ar");
 setLanguage("en");
 
-// Scroll Reveal
-window.addEventListener("scroll",()=>{
+// SCROLL REVEAL
+window.addEventListener("scroll", ()=>{
   document.querySelectorAll(".reveal").forEach(el=>{
     if(el.getBoundingClientRect().top < window.innerHeight - 50) el.classList.add("active");
   });
 });
 
-// Hero Parallax
+// HERO PARALLAX
 window.addEventListener("mousemove", e => {
   document.querySelectorAll(".parallax-layer").forEach((layer, index) => {
     const speed = (index + 1) * 0.02;
-    const x = (window.innerWidth - e.pageX*speed)/100;
-    const y = (window.innerHeight - e.pageY*speed)/100;
+    const x = (window.innerWidth - e.pageX * speed)/100;
+    const y = (window.innerHeight - e.pageY * speed)/100;
     layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
   });
 });
