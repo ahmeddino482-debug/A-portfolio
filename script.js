@@ -6,8 +6,10 @@ themeToggle.addEventListener("click", ()=>{
 });
 if(localStorage.getItem("theme")==="light") document.body.classList.add("light");
 
-// LANGUAGE TOGGLE
-const languageSwitcher = document.getElementById("languageSwitcher");
+// LANGUAGE BUTTONS
+const btnEn = document.getElementById("langEn");
+const btnAr = document.getElementById("langAr");
+
 const translations = {
   en: {
     navAbout:"About",navProjects:"Projects",navContact:"Contact",
@@ -30,21 +32,35 @@ const translations = {
     contactTitle:"تواصل معي"
   }
 };
+
 function setLanguage(lang){
   document.documentElement.lang=lang;
   document.documentElement.dir=(lang==="ar")?"rtl":"ltr";
+
   document.querySelectorAll("[data-i18n]").forEach(el=>{
-    const key=el.getAttribute("data-i18n");
-    el.innerHTML=translations[lang][key];
+    const key = el.getAttribute("data-i18n");
+    el.innerHTML = translations[lang][key];
   });
+
+  // Update active button
+  if(lang==="en"){
+    btnEn.classList.add("active");
+    btnAr.classList.remove("active");
+  } else {
+    btnAr.classList.add("active");
+    btnEn.classList.remove("active");
+  }
+
+  localStorage.setItem("lang", lang);
 }
+
+// Load saved language
 let savedLang = localStorage.getItem("lang") || "en";
 setLanguage(savedLang);
-languageSwitcher.value=savedLang;
-languageSwitcher.addEventListener("change", e=>{
-  setLanguage(e.target.value);
-  localStorage.setItem("lang", e.target.value);
-});
+
+// Button events
+btnEn.addEventListener("click", ()=> setLanguage("en"));
+btnAr.addEventListener("click", ()=> setLanguage("ar"));
 
 // SCROLL REVEAL
 function reveal(){
